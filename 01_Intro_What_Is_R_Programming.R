@@ -8,7 +8,7 @@
 
 # 2) What are "packages" and how to do I find them, install them
 
-# 3) What is a "working directory" and why is it so important?
+# 3) What is a "working directory" and why is it so important? ## where you are doing your stuff
 # (Should I use "projects" instead? YES, here's why.)
 
 # 4) What is commenting? What's up with this hash marks (#)?
@@ -41,10 +41,10 @@ c("Billy","Sallie")
 #Other languages call them variables, R calls them objects...but they're the same idea
 #Assigning something a name, so that you can use it
 
-myobject <- 1
+myobject <- 18
 
 #now I can tell R to give me the value of myobject by referring to it by its name
-myobject
+myobject * 10
 
 #let's try another
 mynames <- c("Billy","Sallie","Tony")

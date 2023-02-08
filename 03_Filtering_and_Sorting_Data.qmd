@@ -72,7 +72,7 @@ Let's say I only want to see flights that were going to Sarasota, Florida (SRQ).
 
 ```{r}
  
-filter(flightdata, dest == "SRQ")
+filter(flightdata, dest == "LAX")
 
 ```
 
@@ -129,7 +129,7 @@ It takes the result and applies something new to it, in sequential order. This b
 ```{r}
 
 flightdata %>% 
-  arrange(dep_delay)
+  arrange(desc(dep_delay))
 
 ```
 
@@ -274,7 +274,7 @@ Set the stock ticker as an object and the start and end dates for the data that 
 
 ```{r}
 
-ticker <- "MSFT"  
+ticker <- "XOM"  
 
 ```
 
@@ -343,7 +343,7 @@ stock_data %>%
 ```{r}
 
 stock_data %>% 
-  filter(date == max(date))
+  filter(date == min(date))
 
 ```
 
@@ -375,7 +375,8 @@ gasprices_weekly
 
 ```{r}
 
-
+gasprices_weekly %>% 
+  filter(price == max(price))
 
 
 ```
@@ -384,7 +385,8 @@ gasprices_weekly
 
 ```{r}
 
-
+gasprices_weekly %>% 
+  filter(price == min(price))
 
 
 ```
@@ -393,9 +395,14 @@ gasprices_weekly
 
 ```{r}
 
-
-
+aug_onward <- gasprices_weekly %>% 
+  filter(date >= "2022-08-01")
+  
+aug_onward %>% 
+  filter(price == max(price))
 
 ```
 
 Great. Now each of you will try a set of exercises to see how you do with these concepts.
+
+
